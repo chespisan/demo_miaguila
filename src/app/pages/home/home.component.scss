@@ -1,0 +1,76 @@
+.content {
+  height: 100%;
+  width: 100%;
+  .map-box {
+    height: 100%;
+    width: 100%;
+  }
+
+  .menu-map {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    border-radius: 0.2rem;
+    margin: 1rem;
+    width: 260px;
+    padding: 1rem;
+    position: absolute;
+    top: 100px;
+
+    .set-address {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+      .input {
+        border: none;
+        border-bottom: solid thin #e9e9e9;
+      }
+    }
+
+
+    .content-default-address {
+      margin: 1rem 0 0 0;
+      h1 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+      .address-info {
+        p { margin: 0; }
+        .tag-address {
+          font-size: 14px;
+        }
+        .address {
+          color: gray;
+          font-size: 11px;
+        }
+       
+      }
+    }
+
+    .content-favourites {
+      margin: 1rem 0;
+      h1 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+      .address-item {
+        cursor: pointer;
+        border-bottom: solid thin #e9e9e9;
+        margin: 0.6rem 0;
+        .address-info {
+          p { margin: 0; }
+          .tag-address {
+            font-size: 14px;
+          }
+          .address {
+            color: gray;
+            font-size: 11px;
+          }
+         
+        }
+      }
+    }
+  }
+}
