@@ -1,62 +1,34 @@
 <div class="content">
-  <div id="mapp" #mapbox class="map-box">
+  <div id="mapp" class="map-box">
 
-    <div class="menu-map">
+    <div class="menu-map" *ngIf="objAddress">
 
       <div class="set-address">
         <h1>¿Donde te recogemos?</h1>
-        <input class="input" type="text" value="Ingresa tu destino">
+        <input class="input" type="text" placeholder="Ingresa tu destino">
       </div>
 
       <div class="content-default-address">
         <h1>Dirección por defecto</h1>
         <div class="address-info">
-          <p class="tag-address">Mi Casa</p>
-          <p class="address">Calle 123 123</p>
+          <p class="tag-address">{{objAddress?.default_route?.address_tag}}</p>
+          <p class="address">{{ objAddress?.default_route?.address }}</p>
         </div>
       </div>
 
       <div class="content-favourites">
         <h1>Favoritos</h1>
-        <div class="address-item">
-          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon> -->
-          <div class="address-info">
-            <p class="tag-address">Mi Casa</p>
-            <p class="address">Calle 123 123</p>
+        <div class="address-item" *ngFor="let address of objAddress.routes_favourites">
+          <div class="address-info" (click)="selectAddressDestination(address)">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon>
+            <div class="content-address">
+              <p class="tag-address">{{address.address_tag}}</p>
+              <p class="address">{{address.address}}</p>
+            </div>
           </div>
         </div>
 
-        <div class="address-item">
-          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon> -->
-          <div class="address-info">
-            <p class="tag-address">Mi Casa</p>
-            <p class="address">Calle 123 123</p>
-          </div>
-        </div>
 
-        <div class="address-item">
-          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon> -->
-          <div class="address-info">
-            <p class="tag-address">Mi Casa</p>
-            <p class="address">Calle 123 123</p>
-          </div>
-        </div>
-
-        <div class="address-item">
-          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon> -->
-          <div class="address-info">
-            <p class="tag-address">Mi Casa</p>
-            <p class="address">Calle 123 123</p>
-          </div>
-        </div>
-
-        <div class="address-item">
-          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon> -->
-          <div class="address-info">
-            <p class="tag-address">Mi Casa</p>
-            <p class="address">Calle 123 123</p>
-          </div>
-        </div>
       </div>
     </div>
 
