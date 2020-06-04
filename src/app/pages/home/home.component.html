@@ -1,36 +1,80 @@
 <div class="content">
   <div id="mapp" class="map-box">
-
-    <div class="menu-map" *ngIf="objAddress">
-
-      <div class="set-address">
-        <h1>¿Donde te recogemos?</h1>
-        <input class="input" type="text" placeholder="Ingresa tu destino">
-      </div>
-
-      <div class="content-default-address">
-        <h1>Dirección por defecto</h1>
-        <div class="address-info">
-          <p class="tag-address">{{objAddress?.default_route?.address_tag}}</p>
-          <p class="address">{{ objAddress?.default_route?.address }}</p>
-        </div>
-      </div>
-
-      <div class="content-favourites">
-        <h1>Favoritos</h1>
-        <div class="address-item" *ngFor="let address of objAddress.routes_favourites">
-          <div class="address-info" (click)="selectAddressDestination(address)">
-            <mat-icon aria-hidden="false" aria-label="Example home icon">place</mat-icon>
-            <div class="content-address">
-              <p class="tag-address">{{address.address_tag}}</p>
-              <p class="address">{{address.address}}</p>
+  </div>
+  <div class="menu-map" *ngIf="objAddress">
+    <!-- Content tap -->
+    <mat-tab-group>
+      <!-- Tap Addresses -->
+      <mat-tab label="Mis direcciones">
+        <div class="content-default-address">
+          <h1>Dirección por defecto</h1>
+          <div *ngIf="objAddress.default_route" class="content-address"
+            (click)="selectAddressDestination(objAddress.default_route)">
+            <mat-icon color="primary" class="icon-start" aria-hidden="false" aria-label="Example home icon">place
+            </mat-icon>
+            <div class="address-info">
+              <p class="tag-address">{{objAddress?.default_route?.address_tag}}</p>
+              <p class="address">{{ objAddress?.default_route?.address }}</p>
             </div>
+            <mat-icon color="primary" class="icon-end" aria-hidden="false" aria-label="Example home icon">
+              keyboard_arrow_right
+            </mat-icon>
           </div>
         </div>
 
+        <div class="content-favourites">
+          <h1>Favoritos</h1>
+          <div class="content-scrolling">
 
-      </div>
-    </div>
+            <div class="address-item" *ngFor="let address of objAddress.routes_favourites">
+              <div class="address-info" (click)="selectAddressDestination(address)">
+                <mat-icon color="primary" class="icon-start" aria-hidden="false" aria-label="Example home icon">place
+                </mat-icon>
+                <div class="content-address">
+                  <p class="tag-address">{{address.address_tag}}</p>
+                  <p class="address">{{address.address}}</p>
+                </div>
+                <mat-icon color="primary" class="icon-end" aria-hidden="false" aria-label="Example home icon">
+                  keyboard_arrow_right
+                </mat-icon>
+              </div>
+            </div>
+          </div>
 
+
+        </div>
+      </mat-tab>
+      <!-- Tab goTo Directions -->
+      <mat-tab label="¿Donde quieres ir?">
+        <div class="set-address">
+          <h1>¿Donde quieres ir?</h1>
+          <form class="form" [formGroup]="addressFrom" (ngSubmit)="setAddressGeocoding()">
+            <mat-form-field>
+              <mat-label>Destino</mat-label>
+              <input formControlName="addressDestination" matInput
+                placeholder="Ingrese el lugar de destino (ej: parque la 93)">
+            </mat-form-field>
+            <div class="error" *ngIf="isErrorGeocoding">
+              No se han encontrado resultados, por favor vuelve a intentar.
+            </div>
+            <div class="btn-action">
+              <button color="primary" type="button" [matMenuTriggerFor]="menu" mat-icon-button
+                aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>help</mat-icon>
+              </button>
+
+              <button mat-flat-button type="submit" color="primary">Ir</button>
+
+              <mat-menu class="menu-content" #menu="matMenu">
+                <div class="info">
+                  Aqui podras escribir un punto especifico donde quieras ir, podra ser un centro comercial, restaurante,
+                  o algun lugar conocido
+                </div>
+              </mat-menu>
+            </div>
+          </form>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>
