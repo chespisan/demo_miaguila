@@ -37,6 +37,13 @@
         .mat-form-field {
           width: 100%;
         }
+        .error {
+          color: #e80909;
+          display: flex;
+          justify-content: center;
+          margin: -14px 0 1rem 0;
+        }
+
         .btn-action {
           display: flex;
           justify-content: center;
@@ -60,7 +67,7 @@
       }
       .content-address {
         display: flex;
-      padding: 0 0.6rem;
+        padding: 0 0.6rem;
 
         .icon-start, .icon-end {
           flex: 0 1 auto;

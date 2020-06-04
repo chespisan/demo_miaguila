@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit {
   public objAddress: any;
   public addressOrigin: any;
   public addressOriginn: any;
+  public isErrorGeocoding: boolean;
+
 
   constructor(
     public _addressesService: AddressesService,
@@ -35,6 +37,8 @@ export class HomeComponent implements OnInit {
   ) {
     // acces token mapbox
     mapbox.accessToken = this.env.mapboxToken;
+
+    this.isErrorGeocoding = false;
 
     this.addressFrom = new FormGroup({
       addressOrigin: new FormControl(''),
@@ -101,15 +105,23 @@ export class HomeComponent implements OnInit {
 
 
   setAddressGeocoding() {
+    this.isErrorGeocoding = false;
+
     if (!this.addressFrom.valid) {
       return;
     }
     this._mapBoxService.geoCodingMapBox(this.addressFrom.value.addressDestination).pipe(takeUntil(this.unsubscribe$)).subscribe((res: any) => {
-      let coords = {
-        lat: res.features[0].geometry.coordinates[1],
-        lng: res.features[0].geometry.coordinates[0]
+      if (res.features[0]) {
+        let coords = {
+          lat: res.features[0].geometry.coordinates[1],
+          lng: res.features[0].geometry.coordinates[0]
+        }
+        this.setDirectionDestination(coords);
+      } else {
+        this.isErrorGeocoding = true;
       }
-      this.setDirectionDestination(coords);
+    }, err => {
+      this.isErrorGeocoding = true;
     })
   }
 

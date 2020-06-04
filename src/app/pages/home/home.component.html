@@ -51,13 +51,18 @@
           <form class="form" [formGroup]="addressFrom" (ngSubmit)="setAddressGeocoding()">
             <mat-form-field>
               <mat-label>Destino</mat-label>
-              <input formControlName="addressDestination" matInput placeholder="Ingrese eL lugar donde quieras ir">
+              <input formControlName="addressDestination" matInput
+                placeholder="Ingrese el lugar de destino (ej: parque la 93)">
             </mat-form-field>
+            <div class="error" *ngIf="isErrorGeocoding">
+              No se han encontrado resultados, por favor vuelve a intentar.
+            </div>
             <div class="btn-action">
               <button color="primary" type="button" [matMenuTriggerFor]="menu" mat-icon-button
                 aria-label="Example icon button with a vertical three dot icon">
                 <mat-icon>help</mat-icon>
               </button>
+
               <button mat-flat-button type="submit" color="primary">Ir</button>
 
               <mat-menu class="menu-content" #menu="matMenu">
