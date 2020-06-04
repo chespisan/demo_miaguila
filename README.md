@@ -24,7 +24,9 @@ Este proyecto es un prototipo de para pintar rutas dinamicas consumidas por un j
 
 1. Por utilizar la version de desarrollo, podra existir algun tipo de intermitencia cuando inicie la app
 2. Si inicia y no se pinta la ruta en el mapa, por favor recargar, ya que  en modo desarrollo sera mas lento 
-3. EL proyecto se realizo en Angular 9, y con Node 12.16.1
+3. EL modulo de geocodificacion un string para pasarlo en la ruta, como es un prototipo, para que puedan ver su funcionamiento, utilizar nombres de lugares claves, ya que hace falta mas configuracion, parametros y demas para lograr ubicaciones mas exactas pasandole una direccion, algo que ocn google maps y lupap es muy sencillo, en este caso con esta libreria podria probar escribiendo  ej: Centro mayor, Parque de la 93.....etc.
+4. EL JSON se creo con  nombres de lugares ficticios, y las cordenadas de lat y long la mayoria son al azar
+4. EL proyecto se realizo en Angular 9, y con Node 12.16.1
 
 
 ## Development server
