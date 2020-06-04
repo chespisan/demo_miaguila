@@ -25,6 +25,11 @@ export class AddressesService {
         "status": 200,
         "ok": true,
         "data": {
+          "address_origin": {
+            "address_tag": "Oficina",
+            "lng": -74.103043,
+            "lat": 4.595985
+          },
           "default_route": {
             "id": 1,
             "address_tag": "Oficina",
@@ -37,7 +42,61 @@ export class AddressesService {
           "routes_favourites": [
             {
               "id": 1,
-              "address_tag": "Oficina",
+              "address_tag": "Casa 2",
+              "address": "AV 2 # 534d - 11",
+              "address_lnglat": {
+                "lng": 74.152292,
+                "lat": 4.621020
+              }
+            },
+            {
+              "id": 1,
+              "address_tag": "Cine",
+              "address": "AV 2 # 534d - 11",
+              "address_lnglat": {
+                "lng": -74.123039,
+                "lat": 4.650185
+              }
+            },
+            {
+              "id": 1,
+              "address_tag": "Parque simon Bolivar",
+              "address": "AV 2 # 534d - 11",
+              "address_lnglat": {
+                "lng": -74.071540,
+                "lat": 4.716679
+              }
+            },
+            {
+              "id": 1,
+              "address_tag": "Novia",
+              "address": "AV 2 # 534d - 11",
+              "address_lnglat": {
+                "lng": -74.045532,
+                "lat": 4.732777
+              }
+            },
+            {
+              "id": 1,
+              "address_tag": "Jefe",
+              "address": "AV 2 # 534d - 11",
+              "address_lnglat": {
+                "lng": -74.056281,
+                "lat": 4.749713
+              }
+            },
+            {
+              "id": 1,
+              "address_tag": "Abuelo",
+              "address": "AV 2 # 534d - 11",
+              "address_lnglat": {
+                "lng": -74.076160,
+                "lat": 4.691883
+              }
+            },
+            {
+              "id": 1,
+              "address_tag": "Abuela",
               "address": "AV 2 # 534d - 11",
               "address_lnglat": {
                 "lng": -74.065033,
@@ -49,8 +108,8 @@ export class AddressesService {
               "address_tag": "Restaurante",
               "address": "AV 23 # 53d - 11",
               "address_lnglat": {
-                "lng": -74.0758391,
-                "lat": 4.6272624
+                "lng": -74.095948,
+                "lat": 4.704790
               }
             },
             {
