@@ -18,3 +18,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
+
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
