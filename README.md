@@ -17,20 +17,21 @@ Este proyecto es un prototipo de para pintar rutas dinamicas consumidas por un j
 10. Podrá seleccionar una dirección de destino de la sección  favoritos, haciendo clic en ella, la ruta del mapa se repintara a la nueva ubicación del destino, también podrá  cambiar el destino con el modulo de geocodificación
 11. El  inicio de partía y el destino, en el mapa contaran con un circulo con la letra a y b, cada punto podrá arrastrarlo hacia cualquier dirección y crear una ruta nueva
 12. Se adapto en modo responsive la vista para verla  en tamaños igual o menores a 600px
+13. Se trabajo con css, FlexBox y algunos componentes de Angular material
+14. Se trabajo con GitFlow
 
 # Recomendaciones
 
 1. Por utilizar la version de desarrollo, podra existir algun tipo de intermitencia cuando inicie la app
-2. Si inicia y no se pinta la ruta, por favor recargar, ya que  en modo desarrollo sera mas lento 
+2. Si inicia y no se pinta la ruta en el mapa, por favor recargar, ya que  en modo desarrollo sera mas lento 
 3. EL proyecto se realizo en Angular 9, y con Node 12.16.1
 
 
 ## Development server
 
-Para inciiar el proyecto el comando es: `ng serve --configuration=develop`, ya que esta  con las configuraciones para trabajar con diferentes entornos
+Para iniciar el proyecto el comando es: `ng serve --configuration=develop`
 
 ## Build
-Para inciiar el proyecto el comando es: `ng build  --configuration=develop`, ya que esta  con las configuraciones para trabajar con diferentes entornos
-Run `ng build  --configuration=develop` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para iniciar el proyecto el comando es: `ng build  --configuration=develop`
 
 
